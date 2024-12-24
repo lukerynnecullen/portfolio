@@ -65,29 +65,6 @@
             cursor: pointer;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .expandable {
-            cursor: pointer;
-            font-weight: bold;
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-        }
-        .expandable::before {
-            content: "▶";
-            margin-right: 10px;
-            transition: transform 0.3s;
-        }
-        .expandable.active::before {
-            transform: rotate(90deg);
-        }
-        .content {
-            display: none;
-            margin-left: 20px;
-        }
-        .content ul {
-            margin: 5px 0;
-            font-size: 1.1rem;
-        }
     </style>
 </head>
 <body>
@@ -108,32 +85,26 @@
         </p>
 
         <h2>Currently</h2>
-        <div class="expandable" onclick="toggleContent(this)">Product @ <a href="https://www.curveroyaltysystems.com/" target="_blank">Curve Royalty Systems</a> (part of <a href="https://downtownmusic.com/services/" target="_blank">Downtown Music</a>)</div>
-        <div class="content">
-            <ul>
-                <li>Spearheaded the development of a payments solution embedded within the accounting system, streamlining client workflows for fund & payee details collection, as well as mass payouts.</li>
-                <li>Managed the sales pipeline end-to-end, successfully onboarding enterprise clients with millions in payout volumes, whilst ensuring robust compliance standards were met.</li>
-            </ul>
-        </div>
+        <p>Product @ <a href="https://www.curveroyaltysystems.com/" target="_blank">Curve Royalty Systems</a> (part of <a href="https://downtownmusic.com/services/" target="_blank">Downtown Music</a>)</p>
+        <ul>
+            <li>Spearheaded the development of a payments solution embedded within the accounting system, streamlining client workflows for fund & payee details collection, as well as mass payouts.</li>
+            <li>Managed the sales pipeline end-to-end, successfully onboarding enterprise clients with millions in payout volumes, whilst ensuring robust compliance standards were met.</li>
+        </ul>
 
-        <div class="expandable" onclick="toggleContent(this)">Founder @ <a href="https://www.precital.com/" target="_blank">Precital</a> & <a href="https://wavequery.com/" target="_blank">WaveQuery</a></div>
+        <p>Founder @ <a href="https://www.precital.com/" target="_blank">Precital</a> & <a href="https://wavequery.com/" target="_blank">WaveQuery</a></p>
 
         <h2>Formerly</h2>
-        <div class="expandable" onclick="toggleContent(this)">Product @ <a href="https://www.fuga.com/" target="_blank">FUGA</a> (part of <a href="https://downtownmusic.com/services/" target="_blank">Downtown Music</a>)</div>
-        <div class="content">
-            <ul>
-                <li>Managed an accounting system processing hundreds of millions in royalties annually, ensuring a near-100% sales match rate was maintained whilst handling new catalog types & revenue streams.</li>
-                <li>Launched a widely anticipated royalty splits feature & revamped the financial dashboard, unlocking new revenue streams in UGC markets & expanding the product fit for enterprise opportunities.</li>
-            </ul>
-        </div>
+        <p>Product @ <a href="https://www.fuga.com/" target="_blank">FUGA</a> (part of <a href="https://downtownmusic.com/services/" target="_blank">Downtown Music</a>)</p>
+        <ul>
+            <li>Managed an accounting system processing hundreds of millions in royalties annually, ensuring a near-100% sales match rate was maintained whilst handling new catalog types & revenue streams.</li>
+            <li>Launched a widely anticipated royalty splits feature & revamped the financial dashboard, unlocking new revenue streams in UGC markets & expanding the product fit for enterprise opportunities.</li>
+        </ul>
 
-        <div class="expandable" onclick="toggleContent(this)">Technology, Marketing & Community @ <a href="https://www.scaleireland.org/" target="_blank">Scale Ireland</a></div>
-        <div class="content">
-            <ul>
-                <li>Secured over €1M in partnership benefits for the founders’ community, growing the Slack network to 1,100+ founders, investors, & operators with a subscription model rolled out to ensure the organisation remains self-sustaining.</li>
-                <li>Organised high-profile webinars with executives from Stripe, Google, & Amazon while driving national press coverage across RTÉ, Business Post, & more, achieving 250k+ social media impressions during key campaigns.</li>
-            </ul>
-        </div>
+        <p>Technology, Marketing & Community @ <a href="https://www.scaleireland.org/" target="_blank">Scale Ireland</a></p>
+        <ul>
+            <li>Secured over €1M in partnership benefits for the founders’ community, growing the Slack network to 1,100+ founders, investors, & operators with a subscription model rolled out to ensure the organisation remains self-sustaining.</li>
+            <li>Organised high-profile webinars with executives from Stripe, Google, & Amazon while driving national press coverage across RTÉ, Business Post, & more, achieving 250k+ social media impressions during key campaigns.</li>
+        </ul>
 
         <h2>Awards</h2>
         <ul>
@@ -162,17 +133,6 @@
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             document.body.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-        }
-
-        function toggleContent(element) {
-            const content = element.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-                element.classList.remove("active");
-            } else {
-                content.style.display = "block";
-                element.classList.add("active");
-            }
         }
 
         // Set theme on load based on localStorage
