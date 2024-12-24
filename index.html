@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,61 +6,138 @@
     <title>Luke Rynne Cullen</title>
     <meta name="description" content="Serial founder and experienced in product at startups, scaleups, and publicly listed companies.">
     <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #343a40;
+            --link-color: #007bff;
+            --card-bg: white;
+        }
+        [data-theme="dark"] {
+            --bg-color: #1e1e1e;
+            --text-color: #f8f9fa;
+            --link-color: #4ea8de;
+            --card-bg: #333;
+        }
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s;
         }
         .container {
             max-width: 800px;
-            margin: 50px auto;
+            margin: 5% auto;
             padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
         }
         h1 {
-            color: #555;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
         p {
-            margin: 10px 0;
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
-        .social-links a {
-            color: #1a0dab;
+        a {
+            color: var(--link-color);
             text-decoration: none;
         }
-        .social-links a:hover {
+        a:hover {
             text-decoration: underline;
+        }
+        .social-card {
+            width: 120px;
+            height: 120px;
+            margin: 10px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+        .social-card:hover {
+            transform: scale(1.05);
+        }
+        .linkedin { background-color: #0077b5; }
+        .instagram { background-color: #e1306c; }
+        .x { background-color: #1da1f2; }
+        .map {
+            margin: 20px auto;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        .toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: none;
+            padding: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
+    <button class="toggle" onclick="toggleTheme()">🌙</button>
     <div class="container">
         <h1>Luke Rynne Cullen</h1>
-        <p>Born in Dublin 🇮🇪, based in Amsterdam 🇳🇱</p>
-        
+        <p>Dublin-born 🇮🇪, working in Amsterdam 🇳🇱<br>
+        Experienced in product at startups 🚀, scaleups 📈, and public companies 🔔<br>
+        Always finding new tools to use, focusing on automation & low-code options 👨‍💻<br>
+        Passionate about helping founders 💡</p>
+
         <h2>Socials</h2>
-        <p class="social-links">
-            <a href="https://www.linkedin.com/in/luke-rynne-cullen/" target="_blank">LinkedIn</a> |
-            <a href="https://www.instagram.com/lukerynnecullen/" target="_blank">Instagram</a> |
-            <a href="https://x.com/lukerynnecullen" target="_blank">X</a>
-        </p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/luke-rynne-cullen/" target="_blank" class="social-card linkedin">LinkedIn</a>
+            <a href="https://www.instagram.com/lukerynnecullen/?hl=en" target="_blank" class="social-card instagram">Instagram</a>
+            <a href="https://x.com/lukerynnecullen" target="_blank" class="social-card x">X</a>
+        </div>
 
         <h2>Currently</h2>
         <ul>
-            <li>Product @ <a href="https://www.curveroyaltysystems.com/" target="_blank">Curve Royalty Systems</a> (part of Downtown Music)</li>
+            <li>Product @ <a href="https://www.curveroyaltysystems.com/" target="_blank">Curve Royalty Systems</a> (part of <a href="https://downtownmusic.com/services/" target="_blank">Downtown Music</a>)</li>
             <li>Founder @ <a href="https://www.precital.com/" target="_blank">Precital</a> & <a href="https://wavequery.com/" target="_blank">WaveQuery</a></li>
         </ul>
 
         <h2>Formerly</h2>
         <ul>
-            <li>Product @ <a href="https://www.fuga.com/" target="_blank">FUGA</a> (part of Downtown Music)</li>
+            <li>Product @ <a href="https://www.fuga.com/" target="_blank">FUGA</a> (part of <a href="https://downtownmusic.com/services/" target="_blank">Downtown Music</a>)</li>
             <li>Product @ <a href="https://www.mastercard.com/gateway.html" target="_blank">Mastercard Payment Gateway Services</a></li>
             <li>Technology, Marketing & Community @ <a href="https://www.scaleireland.org/" target="_blank">Scale Ireland</a></li>
         </ul>
+
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.8923706805137!2d4.63598121602074!3d52.38738767978754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5efc13d88ab87%3A0x8e4e912f8b99a63c!2sHaarlem%2C%20Netherlands!5e0!3m2!1sen!2sus!4v1698180804696!5m2!1sen!2sus" 
+            width="400" 
+            height="300" 
+            style="border:0; border-radius:10px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
+
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Set theme on load based on localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+        });
+    </script>
 </body>
 </html>
